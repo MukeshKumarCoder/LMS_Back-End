@@ -17,10 +17,9 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    accountType: {
+    role: {
       type: String,
-      // required: true,
-      enum: ["Admin", "employee"],
+      enum: ["admin", "employee"],
       default: "employee",
     },
     leaveBalance: {
