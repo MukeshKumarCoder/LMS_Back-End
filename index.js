@@ -4,6 +4,7 @@ require("dotenv").config();
 const dataBase = require("./config/DB");
 
 const userRoutes = require("./routes/UserRoutes");
+const leaveRoutes = require("./routes/LeaveRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,6 +21,7 @@ dataBase.connect();
 
 // routes
 app.use("/auth", userRoutes);
+app.use("/leaves", leaveRoutes);
 
 app.listen(PORT, async () => {
   try {
